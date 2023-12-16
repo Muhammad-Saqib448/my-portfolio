@@ -246,3 +246,37 @@ footer {
     text-align: center;
     padding: 10px;
 }
+
+
+/* Reponsiveness */
+
+@media only screen and (max-width: 700px) {
+    body {
+        width: 100%;
+    }
+    .top_banner {
+        width: 100%;
+    }
+    section.about {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .course {
+        display: grid;
+        grid-template-columns: 1fr;
+
+    }
+    .certificate {
+        display: grid;
+        grid-template-columns: 1fr;
+
+    }
+    .contact {
+        width: 100%;
+        
+    }
+    footer {
+        width: 100%;
+    }
+  }
+  
