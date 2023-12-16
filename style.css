@@ -1,15 +1,99 @@
 
 body {
+    display: grid;
     background-color: #333333;
     font-family: sans-serif;
+    padding: 0;
+}
+/* Animations */
+/* Fade In Out */
+@keyframes fadeinout{
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
+/* Image Changer */
+@keyframes imagechange {
+    0% {
+        background-image: url(design\ thinking.png);
+        background-color:rgb(64, 64, 80);
+    }
+    33% {
+        background-image: url(python.png);
+        background-color: blueviolet;
+    }
+    67% {
+        background-image: url(data\ stucture.png);
+        background-color: rgb(56, 80, 85);
+    }
+    100% {
+        background-image: url(Machine\ Learning.png);
+        background-color: rgb(135, 135, 66);
+    }
+}
+/* Color changer */
+@keyframes colorchange{
+    0% {
+        color: red;
+    }
+    50% {
+        color: blue;
+    }
+    100% {
+        color: yellow;
+    }
+}
+
+/* left to right */
+@keyframes lefttoright {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+/* top to bottom */
+@keyframes mover {
+    from {
+        height: 0;
+    }
+    to {
+        height: 100%;
+    }
+}
+/* bottom to top */
+@keyframes backmover {
+    0% {
+        height: 100%;
+    }
+    50% {
+        height: 0;
+    }
+    100% {
+        height: 100%;
+    }
+}
+/* Top Banner */
 .top_banner {
     display: flex;
-    
+    position: fixed;
     justify-content: space-between;
     background-color: gainsboro;
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+}
+.left_banner {
+    margin-left: 20px;
+    font-size: large;
 }
 .right_banner {
     display: flex;
@@ -28,27 +112,35 @@ body {
     color: aqua;
 }
 header{
-    /* background: blanchedalmond; */
+    display: grid;
     border-bottom: 1px solid aliceblue;
+    margin-bottom: 50px;
+
 }
 .welcome {
+    overflow: hidden;
     text-align: center;
-    color: aliceblue;
+    color: yellow;
     border-bottom: 2px solid aliceblue;
+    white-space: nowrap;
+    animation: lefttoright .5s ease-in, colorchange 10s 3 ease-out;
 }
+
 
 section.about {
     display: grid;
+    overflow: hidden;
+    /* white-space: nowrap; */
     grid-template-columns: 1fr 1.5fr;
     gap: 20px;
     text-align: center;
     color: aliceblue;
     border-bottom:1px solid aliceblue;
+    animation: mover .5s normal;
 }
 .left_about img {
     width: 200px;
     height: 200px;
-    /* position:  right; */
     border-top-left-radius: 100px;
     border-top-right-radius: 100px;
     border-bottom-left-radius: 100px;
@@ -66,7 +158,7 @@ section.about {
     font-size: 1.5rem;
     font-weight: 400;
     background-color: aquamarine;
-    grid-template-columns: 1fr  ;
+    grid-template-columns: 1fr;
     margin-left: 20px;
     color: black;
     border-top-right-radius: 50%;
@@ -110,9 +202,12 @@ section.about {
     font-size: 1.5rem;
     font-weight: 400;
     border-top-right-radius: 30%;
+    overflow: hidden;
+    /* white-space: nowrap; */
     border-right: 2px solid aliceblue;
     border-bottom-left-radius: 30%;
     border-left:2px solid red;
+    animation: lefttoright .5s linear;
 
 }
 .course-left h1{
@@ -129,39 +224,37 @@ section.about {
     border-left: 2px solid aliceblue;
     border-bottom-right-radius: 30%;
     border-right: 2px solid yellow;
+    overflow: hidden;
+    /* white-space: nowrap; */
     font-size: 1.5rem;
     font-weight: 400;
-
+    animation: lefttoright .5s linear;
 }
 
 /* Section Certificates */
-.certificate {
-    display: grid;
-    padding: 30px;
-    gap: 20px;
-    grid-template-columns: 1fr 1fr;
-    border-bottom: 1px solid aliceblue;
-}
 
-.image1{
+.certificate {
     display: flex;
     padding: 30px;
-    background-image: url(design\ thinking.png);
-    background-color: rgb(64, 64, 80);
-    background-position: center;
-    background-size: 300px 300px;
-    height: 300px;
-    border-radius: 50%;
-    border-right: 2px solid red;
-    background-repeat: no-repeat;
+    gap: 20px;
+    height: 600px;
     justify-content: center;
     align-items: end;
+    /* grid-template-columns: 1fr ; */
+    border-bottom: 1px solid aliceblue;
+    background-size: 400px 400px;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: imagechange 6s linear infinite;
 }
 
 .certificate a {
+    overflow: hidden;
     text-decoration: none;
     color: black;
     transition: 0.6s;
+    border-top: 2px solid aliceblue;
+    animation: colorchange 3s infinite;
 }
 
 .certificate a:hover{
@@ -171,55 +264,37 @@ section.about {
     color: yellow;
     text-decoration: underline;
 }
+.image1{
+    padding: 5px;  
+    /* border-radius: 10%;  */
+    border-right: 2px solid aliceblue;
+  
+}
 
 .image2{
-    display: flex;
-    padding: 30px;
-    background-image: url(python.png);
-    background-size: 300px 300px;
-    height: 300px;
-    border-radius: 50%;
-    background-color: blueviolet;
-    border-left: 2px solid red;
-    background-position: center;
-    background-repeat: no-repeat;
-    justify-content: center;
-    align-items: self-end;
+    padding: 5px;  
+    /* border-radius: 10%;  */
+    border-right: 2px solid aliceblue;
+  
 }
 .image3{
-    display: flex;
-    padding: 30px;
-    background-image: url(data\ stucture.png);
-    background-size: 300px 300px;
-    background-color: rgb(56, 80, 85);
-    height: 300px;
-    border-radius: 50%;
-    border-right: 2px solid yellow;
-    background-position: center;
-    background-repeat: no-repeat;
-    justify-content: center;
-    align-items: end;
+    padding: 5px;  
+    /* border-radius: 10%;  */
+    border-right: 2px solid aliceblue;
+  
 }
 .image4{
-    display: flex;
-    padding: 30px;
-    background-image: url(Machine\ Learning.png);
-    background-color: rgb(135, 135, 66);
-    background-size: 300px 300px;
-    height: 300px;
-    border-radius: 50%;
-    border-left: 2px solid blue;
-    background-position: center;
-    background-repeat: no-repeat;
-    justify-content: center;
-    align-items: end;
+    padding: 5px;  
+    /* border-radius: 10%;  */
+    border-right: 2px solid aliceblue;
+  
 }
 
 /* Contact Section */
 .contact {
     display: flex;
     padding: 20px;
-    background: rgb(44, 41, 41);
+    background: rgb(208, 141, 141);
     justify-content: center;
     gap: 20px;
 }
@@ -231,7 +306,7 @@ section.about {
 }
 i {
     font-size: 3rem;
-    color: rgb(60, 62, 125);
+    color: rgb(49, 44, 52);
 }
 .email {
     display: flex;
@@ -241,7 +316,7 @@ i {
 
 /* Footer */
 
-footer {
+.footer {
     background: aliceblue;
     text-align: center;
     padding: 10px;
@@ -250,12 +325,14 @@ footer {
 
 /* Reponsiveness */
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 500px) {
     body {
         width: 100%;
+        padding: 0;
     }
     .top_banner {
         width: 100%;
+        display: grid;
     }
     section.about {
         display: grid;
@@ -266,16 +343,12 @@ footer {
         grid-template-columns: 1fr;
 
     }
-    .certificate {
-        display: grid;
-        grid-template-columns: 1fr;
-
-    }
+   
     .contact {
         width: 100%;
         
     }
-    footer {
+    .footer {
         width: 100%;
     }
   }
