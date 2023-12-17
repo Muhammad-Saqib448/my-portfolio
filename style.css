@@ -320,36 +320,60 @@ i {
     background: aliceblue;
     text-align: center;
     padding: 10px;
+    /* width: 100%; */
 }
 
 
 /* Reponsiveness */
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 900px) {
     body {
         width: 100%;
         padding: 0;
     }
     .top_banner {
-        width: 100%;
+        /* width: 100%; */
         display: grid;
     }
     section.about {
         display: grid;
         grid-template-columns: 1fr;
+        gap: 0px;
+        border-radius: 20px;
+    }
+    .left_about {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        border-radius: 2px;
+        margin-left: 0px;
+        font-size: 1.2rem;
+        color: blue;
+    }
+    .right_about {
+        border-radius: 2px;
     }
     .course {
         display: grid;
         grid-template-columns: 1fr;
+        gap: 0px;
 
     }
+    .course-left {
+        border-top-right-radius: 20%;
+        border-bottom-left-radius: 2px;
+    }
+    .course-right {
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 20%;
+        border-bottom-right-radius: 2px;
+    }
    
-    .contact {
+    /* .contact {
         width: 100%;
         
-    }
-    .footer {
+    } */
+    /* .footer {
         width: 100%;
-    }
+    } */
   }
   
