@@ -386,13 +386,95 @@ i {
         border-bottom-left-radius: 20%;
         border-bottom-right-radius: 2px;
     }
-   
-    /* .contact {
-        width: 100%;
-        
-    } */
-    /* .footer {
-        width: 100%;
-    } */
   }
+
+   
+@media only screen and (min-width: 1390px) {
+    body {
+        display: grid;
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        display: grid;
+        height: 100vh;
+        position: absolute;
+        float: right;
+    }
+    .top_banner {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 20%;
+        height: 100vh;
+        background-color: rgb(129, 127, 125);
+        border-right: 2px solid rgb(233, 16, 99);
+    }
+    .left_banner{
+        display: flex;
+        font-size: 2rem;
+        font-weight: bold;
+        color: black;
+    }
+    .right_banner {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 2rem;
+    }
+    .right_banner a {
+        color: rgb(28, 28, 100);
+    }
+    .welcome{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        justify-self: right;
+        justify-content: center;
+    }
+    .cert{
+        display: flex;
+        /* justify-content: right; */
+        width: 80%;
+        justify-self: right;
+        padding-left: 0;
+        justify-content: center;
+    }
+    section.about {
+     display: grid;
+     width: 80%;
+     justify-self: right;
+     padding-left: 0;
+     gap: 5px;
+     
+    }
+    .left_about{
+        margin-left: 0;
+    }
+    .course {
+        display: grid;
+        width: 80%;
+        justify-self: right;
+        padding-right: 0;
+        margin-left: 10px;
+        gap: 5px;
+    }
+    .certificate {
+        display: flex;
+        width: 80%;
+        justify-self: right;
+    }
+    .contact {
+        display: flex;
+        width: 80%;
+        justify-self: right;
+    }
+    .footer {
+        display: flex;
+        width: 80%;
+        justify-self: right;
+        justify-content: center;
+    }
+
+}
   
