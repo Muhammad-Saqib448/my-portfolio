@@ -91,6 +91,17 @@ body {
     padding-bottom: 10px;
     width: 100%;
 }
+
+#menu {
+    font-size: 2rem;
+    color: blue;
+    display: none;
+}
+#close {
+    font-size: 2rem;
+    color: blue;
+    display: none;
+}
 .left_banner {
     margin-left: 20px;
     font-size: large;
@@ -332,8 +343,16 @@ i {
         padding: 0;
     }
     .top_banner {
-        /* width: 100%; */
-        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .right_banner {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+    #menu {
+        display: flex;
+        margin-right: 40px;
     }
     section.about {
         display: grid;
